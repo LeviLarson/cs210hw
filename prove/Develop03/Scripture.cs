@@ -6,24 +6,19 @@ public class Scripture{
 
     private List<Word> _words;
 
-    private Random _random;
-
     public Scripture(Reference reference, string text){
 
         _reference = reference;
 
         _words = text.Split(' ').Select(word => new Word(word)).ToList(); // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/lambda-expressions
-
-        _random = new Random();
+ 
     }
 
     public string GetDisplayText(){
         string joinedWords = "";
 
         foreach(Word word in _words){
-            if(word._isHidden == false){
                 joinedWords = joinedWords + " " + word;
-            }
         }
 
         return joinedWords;
@@ -34,16 +29,21 @@ public class Scripture{
         var visibleWords = new List<Word>();
 
         foreach (var word in _words){
+
+            // finds all visible words and puts them in a temp list
             if (!word.IsHidden()){
                 visibleWords.Add(word);
             }
-
             for (int i = 0; i < count && visibleWords.Count > 0; i++){
-                int index = _random.Next(visibleWords.Count);
+                //gets random word from visible list
+                new _random random;
+                int index = random.Next(visibleWords.Count);
+                //hides random word
                 visibleWords[index].Hide();
+                //removes word from temporary list
                 visibleWords.RemoveAt(index);
             }
-
+            
         }
 
     }
