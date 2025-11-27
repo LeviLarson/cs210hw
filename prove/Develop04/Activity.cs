@@ -1,6 +1,6 @@
 using System;
 
-class Activity
+class  Activity
 {
     private string _name;
     private string _description;
@@ -74,5 +74,8 @@ class Activity
 
     }
 
-
+    public void Run()
+    {
+       ShowSpinner(4);
+    }
 }

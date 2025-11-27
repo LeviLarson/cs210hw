@@ -5,6 +5,7 @@ class Program
     static void Main(string[] args)
     {
         while(true){
+            Activity activity = new Activity("", "");
             Console.Clear();
             Console.WriteLine("Mindfulness Program\n");
             Console.WriteLine("1. Breathing Activity");
@@ -15,26 +16,33 @@ class Program
             Console.WriteLine("\nSelect Choice: ");
             string choice = Console.ReadLine();
 
-            Activity activity = null;
-
+                        
             switch (choice)
             {
                 case "1":
-                activity = new BreathingActivity();
+                BreathingActivity BreathingActivity = new BreathingActivity();
+                BreathingActivity.HandleBreathing();
                 break;
+
                 case "2":
-                activity = new ReflectionActivity();
+                ReflectionActivity ReflectionActivity = new ReflectionActivity();
+                ReflectionActivity.HandleReflection();
                 break;
+
                 case "3":
-                activty = new ListingActivity();
+                ListingActivity ListingActivity = new ListingActivity();
+                ListingActivity.HandleListing();
+                break;
+
                 case "4":
                 return;
+                
                 default:
                 Console.WriteLine("Invalid Choice. Press Enter.");
                 Console.ReadLine();
                 continue;
             }
-            activity.Run();
+            
         }
     }
 }

@@ -4,6 +4,9 @@ class BreathingActivity : Activity
 {
 
     public BreathingActivity() : base("Breathing Activity", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing. Suggested time is around 30 seconds.")
+    {
+        
+    }
     public void HandleBreathing()
     {
         Start();
