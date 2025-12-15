@@ -2,9 +2,19 @@ using System;
 
 class Comment{
 
-    private string _name {get; set;}
+    private string _name;
 
-    private string _text {get; set;}
+    public string GetName()
+    {
+        return _name;
+    }
+
+    private string _text;
+
+    public string GetText()
+    {
+     return _text;   
+    }
 
     public Comment(string name, string text)
     {

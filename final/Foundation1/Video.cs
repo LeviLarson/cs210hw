@@ -3,10 +3,10 @@ using System;
 class Video
 {
     
-    private string _title {get; set;}
-    private string _author {get; set;}
-    private int _length {get; set;}
-    private List<Comment> _comments {get; set;}
+    public string _title;
+    private string _author;
+    private int _length;
+    private List<Comment> _comments;
 
     public Video(string title, string author, int length, List<Comment> comments)
     {
@@ -27,8 +27,27 @@ class Video
         return temp;
     }
 
-    public void DisplayVideo()
+    public void DisplayComments()
     {
-        
+        foreach(Comment comment in _comments)
+        {
+            Console.WriteLine($"{comment.GetName()}: {comment.GetText()}");
+        }
     }
+
+    public string GetTitle()
+    {
+        return _title;
+    }
+
+    public string GetAuthor()
+    {
+     return _author;   
+    }
+
+    public int GetLength()
+    {
+     return _length;   
+    }
+
 }
