@@ -3,7 +3,16 @@ using System;
 class Customer
 {
     private string _name;
+    public string GetName()
+    {
+        return _name;
+    }
     private Address _address;
+    
+    public Address GetAddress()
+    {
+        return _address;
+    }
 
     public Customer(string name, Address address)
     {

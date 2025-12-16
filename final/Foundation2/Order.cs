@@ -11,19 +11,42 @@ class Order
         _customer = customer;
     }
 
+
+
     public double TotalCost()
     {
+        double temp = 0.0;
+        foreach(Product product in _products)
+            {
+                temp += product.GetPrice();
+                product.SetQuantity(product.GetQuantity() - 1);
+            }
 
-     return 0;   
+        if (_customer.GetAddress().IsUSACitizen())
+        {
+            return temp + 5;
+        }
+
+        else
+        {
+            return temp + 35;
+        }
     }
 
-    public string PackingLabel()
+    public void PackingLabel()
     {
-        return"";
+        foreach(Product product in _products)
+        {
+            Console.WriteLine($"{product.GetName()} - ID:{product.GetProductID()}");
+        }
     }
 
-    public string ShippingLabel()
+    public void ShippingLabel()
     {
-     return "";   
+
+        Address temp = _customer.GetAddress();
+      Console.WriteLine(_customer.GetName());
+        Console.WriteLine($"{temp.GetStreet()} \n{temp.GetCity()}, {temp.GetState()}, {temp.GetCountry()}");
+
     }
 }
