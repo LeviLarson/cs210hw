@@ -23,14 +23,15 @@ class OutdoorGathering : Event
 
     }
 
-            public void FullDetails()
+    public void FullDetails()
     {
-        Console.WriteLine(this.GetTitle());
+        Console.WriteLine("Title: "+ this.GetTitle());
         Console.WriteLine(this.GetDescription());
         Console.WriteLine("Date: "+ this.GetDate());
         Console.WriteLine("Time: "+  this.GetTime());
         Address temp = this.GetAddress();
-        Console.WriteLine($"{temp.GetStreet()} \n{temp.GetCity()}, {temp.GetState()}, {temp.GetCountry()}");
+        Console.WriteLine($"Address: \n{temp.GetStreet()} \n{temp.GetCity()}, {temp.GetState()}, {temp.GetCountry()}");
+        Console.WriteLine("Event Type: "+ this.GetType());
         Console.WriteLine("Forecast: "+ this.GetForecast());
         Console.WriteLine("There is no Attendee Limit");
     }

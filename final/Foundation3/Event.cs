@@ -55,19 +55,19 @@ class Event
 
     public void StandardDetails()
     {
-        Console.WriteLine(this.GetTitle());
+        Console.WriteLine("Title: "+this.GetTitle());
         Console.WriteLine(this.GetDescription());
         Console.WriteLine("Date: "+ this.GetDate());
         Console.WriteLine("Time: "+  this.GetTime());
         Address temp = this.GetAddress();
-        Console.WriteLine($"{temp.GetStreet()} \n{temp.GetCity()}, {temp.GetState()}, {temp.GetCountry()}");
+        Console.WriteLine($"Address: \n{temp.GetStreet()} \n{temp.GetCity()}, {temp.GetState()}, {temp.GetCountry()}");
     }
 
     public void ShortDescription()
     {
-        Console.WriteLine(this.GetType());
-        Console.WriteLine(this.GetTitle());
-        Console.WriteLine(this.GetDate());
+        Console.WriteLine("Event Type: " + this.GetType());
+        Console.WriteLine("Title: "+this.GetTitle());
+        Console.WriteLine("Date:"+ this.GetDate());
     }
 
 
