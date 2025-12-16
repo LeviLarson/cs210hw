@@ -1,22 +1,20 @@
 using System;
 
-class Lecture : Event
+class OutdoorGathering : Event
 {
-    private string _speakerName;
-    public string GetSpeaker()
+    private string _forecast;
+    public string GetForecast()
     {
-        return _speakerName;
+        return _forecast;
     }
-    private int _capacity;
-    public int GetCapacity()
+    
+    public void SetForecast(string forecast)
     {
-        return _capacity;
+        _forecast = forecast;
     }
-
-    public Lecture(string speakerName, int capacity, string title, string description, string date, string time, Address address) : base()
+    public OutdoorGathering(string forecast, string title, string description, string date, string time, Address address) : base()
     {
-        _speakerName = speakerName;
-        _capacity = capacity;
+        _forecast = forecast;
         this.SetTitle(title);
         this.SetDescription(description);
         this.SetDate(date);
@@ -25,7 +23,7 @@ class Lecture : Event
 
     }
 
-        public void FullDetails()
+            public void FullDetails()
     {
         Console.WriteLine(this.GetTitle());
         Console.WriteLine(this.GetDescription());
@@ -33,8 +31,7 @@ class Lecture : Event
         Console.WriteLine("Time: "+  this.GetTime());
         Address temp = this.GetAddress();
         Console.WriteLine($"{temp.GetStreet()} \n{temp.GetCity()}, {temp.GetState()}, {temp.GetCountry()}");
-        Console.WriteLine("Speaker: "+ this.GetSpeaker());
-        Console.WriteLine("Capacity: "+ this.GetCapacity());
+        Console.WriteLine("Forecast: "+ this.GetForecast());
+        Console.WriteLine("There is no Attendee Limit");
     }
-
 }

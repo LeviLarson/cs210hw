@@ -45,7 +45,7 @@ class Order
     {
 
         Address temp = _customer.GetAddress();
-      Console.WriteLine(_customer.GetName());
+        Console.WriteLine(_customer.GetName());
         Console.WriteLine($"{temp.GetStreet()} \n{temp.GetCity()}, {temp.GetState()}, {temp.GetCountry()}");
 
     }
